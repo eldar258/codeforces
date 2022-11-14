@@ -1,2 +1,17 @@
+group 'com.ejab'
+version '1.0'
+
 apply plugin: 'idea'
 apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+    useJUnitPlatform()
+}

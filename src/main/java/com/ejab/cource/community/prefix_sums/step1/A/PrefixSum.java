@@ -12,15 +12,15 @@ public class PrefixSum {
         int n = Integer.parseInt(bf.readLine());
         StringTokenizer stringTokenizer = new StringTokenizer(bf.readLine());
 
-        int[] array = new int[n];
+        Integer[] array = new Integer[n];
         for (int i = 0; i < n; i++) {
             array[i] = Integer.parseInt(stringTokenizer.nextToken());
         }
-        long[] result = new PrefixSum().calculate(array);
+        Long[] result = new PrefixSum().calculate(array);
 
         BufferedOutputStream bos = new BufferedOutputStream(System.out);
 
-        for (long l : result) {
+        for (var l : result) {
             bos.write(String.valueOf(l).getBytes());
             bos.write(" ".getBytes());
         }
@@ -28,8 +28,8 @@ public class PrefixSum {
         bos.flush();
     }
 
-    private long[] calculate(int[] array) {
-        long[] result = new long[array.length + 1];
+    public Long[] calculate(Integer[] array) {
+        Long[] result = new Long[array.length + 1];
         result[0] = 0L;
         for (int i = 0; i < array.length; i++) {
             result[i + 1] = result[i] + array[i];
