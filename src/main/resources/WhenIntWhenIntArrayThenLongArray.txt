@@ -1,0 +1,32 @@
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+@StartMain
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        Integer n = Integer.parseInt(bf.readLine());
+        StringTokenizer stringTokenizer = new StringTokenizer(bf.readLine());
+
+        Integer[] array = new Integer[n];
+        for (int i = 0; i < n; i++) {
+            array[i] = Integer.parseInt(stringTokenizer.nextToken());
+        }
+        Long[] result = calculate(n, array);
+
+        BufferedOutputStream bos = new BufferedOutputStream(System.out);
+
+        for (var l : result) {
+            bos.write(String.valueOf(l).getBytes());
+            bos.write(" ".getBytes());
+        }
+
+        bos.flush();
+    }
+
+    public static Long[] calculate(Integer n, Integer[] array) {
+        @ClassName
+        return new *().calculate(n, array);
+    }
