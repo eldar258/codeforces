@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-@StartMain
+
+
+public class PrefixSum {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         Integer n = Integer.parseInt(bf.readLine());
@@ -27,6 +29,15 @@ import java.util.StringTokenizer;
     }
 
     public static Long[] calculateResult(Integer n, Integer[] array) {
-        @ClassName
-        return new *().calculate(n, array);
+        return new PrefixSum().calculate(n, array);
     }
+
+    public Long[] calculate(Integer n, Integer[] array) {
+        Long[] result = new Long[n + 1];
+        result[0] = 0L;
+        for (int i = 0; i < n; i++) {
+            result[i + 1] = result[i] + array[i];
+        }
+        return result;
+    }
+}

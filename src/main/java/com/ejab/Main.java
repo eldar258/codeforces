@@ -1,8 +1,19 @@
 package com.ejab;
 
-public class Main {
+import collector.CreateExecutableFileFrom;
+import java.util.Set;
+import org.reflections.Reflections;
 
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Reflections reflection = new Reflections("com.ejab");
+
+        Set<Class<?>> classes = reflection.getTypesAnnotatedWith(CreateExecutableFileFrom.class);
+        classes.parallelStream().forEach(Main::createSourceFile);
+
+    }
+
+    private static void createSourceFile(Class<?> clazz) {
+        clazz.getAnnotation(CreateExecutableFileFrom.class).value().getConsumer().accept(clazz);
     }
 }
