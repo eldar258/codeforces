@@ -3,7 +3,7 @@ package com.ejab.cource.community.prefix_sums.step1.A;
 import collector.CreateExecutableFileFrom;
 import collector.CreateExecutableFileFrom.ExecutableFiles;
 
-@CreateExecutableFileFrom(ExecutableFiles.INT_INT_ARRAY_THEN_LONG_ARRAY)
+@CreateExecutableFileFrom(ExecutableFiles.INT_INTARRAY_THEN_LONGARRAY)
 public class PrefixSum {
 
     public Long[] calculate(Integer n, Integer[] array) {

@@ -12,7 +12,8 @@ public @interface CreateExecutableFileFrom {
     ExecutableFiles value();
 
     enum ExecutableFiles {
-        INT_INT_ARRAY_THEN_LONG_ARRAY(Collector::whenIntIntArrayThenReturnLongArray);
+        INT_INTARRAY_THEN_LONGARRAY(Collector::whenIntIntArrayThenReturnLongArray),
+        INT_INTARRAY_INT_INTARRAY_THEN_LONGARRAY(Collector::whenIntIntArrayIntIntArrayThenReturnLongArray);
 
         final Consumer<Class<?>> consumer;
 
