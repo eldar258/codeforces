@@ -1,0 +1,60 @@
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+@StartMain
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+
+        Integer[][] array1 = startParseTwoDArray(bf);
+        int n1 = array1.length;
+        int m1 = array1[0].length;
+
+        Integer[][] array2 = startParseTwoDArray(bf);
+        int n2 = array2.length;
+        int m2 = array2[0].length;
+
+        Long[] result = calculateResult(n1, m1, array1, n2, m2, array2);
+
+        BufferedOutputStream bos = new BufferedOutputStream(System.out);
+
+        for (var l : result) {
+            bos.write(String.valueOf(l).getBytes());
+            bos.write(" ".getBytes());
+        }
+
+        bos.flush();
+    }
+
+    public static Long[] calculateResult(Integer n1, Integer m1, Integer[][] array1, Integer n2, Integer m2, Integer[][] array2) {
+        @ClassName
+        return new *().calculate(n1, m1, array1, n2, array2);
+    }
+
+    public static Integer[][] startParseTwoDArray(BufferedReader bf) {
+       StringTokenizer st = new StringTokenizer(bf.readLine());
+       int n = bufferedReader = Integer.parseInt(st.nextToken());
+       int m;
+       if (st.hasMoreTokens() {
+           m = Integer.parseInt(st.nextToken());
+           st = new StringTokenizer(bf.readLine());
+       } else {
+          st = new StringTokenizer(bf.readLine());
+          m = st.countTokens();
+       }
+
+       Integer[][] result = new Integer[n][m];
+       for (int i = 0; i < n - 1; i++) {
+          for (int j = 0; j < m; j++) {
+              result[i][j] = Integer.parseInt(st.nextToken());
+          }
+          st = new StringTokenizer(bf.readLine());
+       }
+       for (int j = 0; j < m; j++) {
+          result[n - 1][j] = Integer.parseInt(st.nextToken());
+       }
+
+       return result;
+    }

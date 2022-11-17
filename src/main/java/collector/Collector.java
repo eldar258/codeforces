@@ -13,15 +13,7 @@ public class Collector {
 
     private final static String absolutePathAnswersFolder = System.getProperty("user.dir") + "\\answers\\";
 
-    public static void whenIntIntArrayIntIntArrayThenReturnLongArray(Class<?> clazz) {
-        createAnswer("whenIntIntArrayIntIntArrayThenReturnLongArray.txt", clazz);
-    }
-
-    public static void whenIntIntArrayThenReturnLongArray(Class<?> clazz) {
-        createAnswer("WhenIntWhenIntArrayThenLongArray.txt", clazz);
-    }
-
-    private static void createAnswer(String mainMethodTemplateFileName, Class<?> clazz) {
+    public static void createAnswer(Class<?> clazz, String mainMethodTemplateFileName) {
         String dirProject = System.getProperty("user.dir");
         String packagePath = clazz.getCanonicalName().replace(".", "\\");
         String filePath = packagePath + ".java";

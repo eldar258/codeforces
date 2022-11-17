@@ -3,7 +3,7 @@ package com.ejab.cource.community.prefix_sums.step2.B;
 import collector.CreateExecutableFileFrom;
 import collector.CreateExecutableFileFrom.ExecutableFiles;
 
-@CreateExecutableFileFrom(ExecutableFiles.INT_INTARRAY_INT_INTARRAY_THEN_LONGARRAY)
+@CreateExecutableFileFrom(ExecutableFiles.INT_INTARRAY_INT_TWODINTARRAY_THEN_LONGARRAY)
 public class XOROnSeg {
 
     public Long[] calculate(Integer n, Integer[] array, Integer countSeg, Integer[][] segments) {
