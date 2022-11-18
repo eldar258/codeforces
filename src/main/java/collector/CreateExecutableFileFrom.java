@@ -18,7 +18,7 @@ public @interface CreateExecutableFileFrom {
                 "whenIntAndIntArrayAndIntAndTwoDIntArrayThenLongArray.txt")),
 
         INT_INT_TWODINTARRAY_INT_TWODINTARRAY_THEN_LONGARRAY(clazz -> Collector.createAnswer(clazz,
-                "whenIntAndIntAndTwoDIntArrayAndIntAndTwoDIntThenReturnLongArray.txt"));
+                "whenIntAndIntAndTwoDIntArrayAndIntAndTwoDIntArrayThenLongArray.txt"));
 
         final Consumer<Class<?>> consumer;
 

@@ -42,7 +42,7 @@ public class Collector {
 
     private static File getFromTemplate(String templateFileName) throws URISyntaxException {
         var uriTemplate = Collector.class.getClassLoader().getResource(templateFileName);
-        if (uriTemplate == null) throw new RuntimeException("CAN'T find template" + templateFileName);
+        if (uriTemplate == null) throw new RuntimeException("CAN'T find template: " + templateFileName);
         return new File(uriTemplate.toURI());
     }
 

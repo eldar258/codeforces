@@ -28,16 +28,11 @@ import java.util.StringTokenizer;
         bos.flush();
     }
 
-    public static Long[] calculateResult(Integer n1, Integer m1, Integer[][] array1, Integer n2, Integer m2, Integer[][] array2) {
-        @ClassName
-        return new *().calculate(n1, m1, array1, n2, array2);
-    }
-
-    public static Integer[][] startParseTwoDArray(BufferedReader bf) {
+    public static Integer[][] startParseTwoDArray(BufferedReader bf) throws IOException {
        StringTokenizer st = new StringTokenizer(bf.readLine());
-       int n = bufferedReader = Integer.parseInt(st.nextToken());
+       int n = Integer.parseInt(st.nextToken());
        int m;
-       if (st.hasMoreTokens() {
+       if (st.hasMoreTokens()) {
            m = Integer.parseInt(st.nextToken());
            st = new StringTokenizer(bf.readLine());
        } else {
@@ -57,4 +52,9 @@ import java.util.StringTokenizer;
        }
 
        return result;
+    }
+
+    public static Long[] calculateResult(Integer n1, Integer m1, Integer[][] array1, Integer n2, Integer m2, Integer[][] array2) {
+        @ClassName
+        return new *().calculate(n1, m1, array1, n2, array2);
     }
