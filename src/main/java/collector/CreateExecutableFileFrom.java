@@ -23,6 +23,9 @@ public @interface CreateExecutableFileFrom {
         INT_INT_TWODINTARRAY_INT_TWODINTARRAY_THEN_TWODLONGARRAY(clazz -> Collector.createAnswer(clazz,
                 "whenIntAndIntAndTwoDIntArrayAndIntAndTwoDIntArrayThenTwoDLongArray.txt")),
 
+        INT_INTARRAY_TWODINTARRAY_THEN_LARRAY(clazz -> Collector.createAnswer(clazz,
+                "whenIntAndIntArrayAndTwoDIntArrayThenLArray.txt")),
+
         BUFFEREDREADER_THENLONGARRAY(clazz -> Collector.createAnswer(clazz,
                 "whenBufferedReaderThenLongArray.txt"));
 
