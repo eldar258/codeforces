@@ -24,6 +24,37 @@ public class Helper {
         System.out.println();
     }
 
+    public static void assertArray(int[] expected, int[] result) {
+        try {
+            assertArrayEquals(expected, result);
+        } catch (AssertionFailedError assertionFailedError) {
+            printArrayFirst100(expected);
+            printArrayFirst100(result);
+            throw assertionFailedError;
+        }
+    }
+
+    public static void assertArray(long[] expected, long[] result) {
+        try {
+            assertArrayEquals(expected, result);
+        } catch (AssertionFailedError assertionFailedError) {
+            printArrayFirst100(expected);
+            printArrayFirst100(result);
+            throw assertionFailedError;
+        }
+    }
+
+
+    public static void printArrayFirst100(int[] array) {
+        Arrays.stream(array).limit(100).forEach(el -> System.out.printf("[%-2s],", el));
+        System.out.println();
+    }
+
+    public static void printArrayFirst100(long[] array) {
+        Arrays.stream(array).limit(100).forEach(el -> System.out.printf("[%-2s],", el));
+        System.out.println();
+    }
+
     public static Long[][] toLongArray(String... text) {
         Long[][] result = new Long[text.length][];
         for (int i = 0; i < text.length; i++) {
@@ -41,7 +72,25 @@ public class Helper {
     }
 
     public static Integer[] toIntegerArray(String text) {
-        return Arrays.stream(text.trim().split(" ")).map(Integer::parseInt).toArray(Integer[]::new);
+        return Arrays.stream(text.trim().split("[ \n]+")).map(Integer::parseInt).toArray(Integer[]::new);
+    }
+
+    public static int[][] toIntArray(String... text) {
+        int[][] result = new int[text.length][];
+        for (int i = 0; i < text.length; i++) {
+            result[i] = toIntArray(text[i]);
+        }
+        return result;
+    }
+
+    public static int[] toIntArray(String text) {
+        var result = toIntegerArray(text);
+        return Arrays.stream(result).mapToInt(Integer::intValue).toArray();
+    }
+
+    public static long[] toLArray(String text) {
+        var result = toLongArray(text);
+        return Arrays.stream(result).mapToLong(Long::longValue).toArray();
     }
 
     public static Long[] toLongArray(String text) {
