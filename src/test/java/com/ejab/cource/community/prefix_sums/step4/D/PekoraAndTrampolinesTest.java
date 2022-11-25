@@ -212,4 +212,20 @@ class PekoraAndTrampolinesTest {
                 )
         );
     }
+
+    @Test
+    public void calculate13() {
+        PekoraAndTrampolines pekoraAndTrampolines = new PekoraAndTrampolines();
+        int expected = 19;
+        int n = 8;
+        int[][] data = new int[][]{toIntArray("7 3 6 9 3 6 5 6")};
+        assertArray(new long[]{expected}
+                ,
+                pekoraAndTrampolines.calculate(
+                        1,
+                        new int[]{n},
+                        data
+                )
+        );
+    }
 }
