@@ -19,27 +19,24 @@ public class PekoraAndTrampolines {
 
     public long calculate(int n, int[] trampolines) {
         long result = 0;
-        long[] pekorsClones = new long[n];
+        long[] prefixDiffPekorsClones = new long[n + 3];
 
-        for (int i = 0; i < n; i++) {
-            int si = trampolines[i];
-            long howManyPekorsNeedTake = Math.max(si - 1 - pekorsClones[i], 0);
-            pekorsClones[i] += howManyPekorsNeedTake;
-            result += howManyPekorsNeedTake;
+        for (int i = 0, j = 1; i < n; i++, j++) {
+            prefixDiffPekorsClones[j] += prefixDiffPekorsClones[j - 1];
 
-            if (pekorsClones[i] > 0) { // Pekors clones will jump to other positions to right
-                int maxIndexPositionWherePekorCanJump = Math.min(n - 1, si + i);
-                for (int j = i + 2; j <= maxIndexPositionWherePekorCanJump; j++) {
-                    pekorsClones[j] += 1; // new place of this Pekors clones
-                }
-
-                if (i + 1 < n) {
-                    long howManyPekorsClonesAreLeftAfterJumping = pekorsClones[i] - (si - 1);
-                    pekorsClones[i + 1] += howManyPekorsClonesAreLeftAfterJumping; // Jump to next position, because S == 1
-                }
+            long tmp = trampolines[i] - 1 - prefixDiffPekorsClones[j];
+            if (tmp > 0) {
+                result += tmp;
+            } else {
+                tmp = -tmp;
+                prefixDiffPekorsClones[j + 1] += tmp;
+                prefixDiffPekorsClones[j + 2] -= tmp;
             }
-
+            prefixDiffPekorsClones[j + 2] += 1;
+            int rightIndex = j + trampolines[i] + 1;
+            if (rightIndex < prefixDiffPekorsClones.length) prefixDiffPekorsClones[rightIndex] -= 1;
         }
+
         return result;
     }
 }
