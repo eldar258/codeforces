@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.StringTokenizer;
 
-@CreateExecutableFileFrom(ExecutableFiles.BUFFEREDREADER_THENLONGARRAY)
+@CreateExecutableFileFrom(ExecutableFiles.BUFFEREDREADER_THEN_LONGARRAY)
 public class SumOn5D {
 
     public Long[] calculate(String string) throws IOException {
