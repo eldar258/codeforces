@@ -10,6 +10,15 @@ import org.junit.jupiter.api.Test;
 class AddSumUpTest {
 
     @Test
+    void calculate0() {
+        int expected = 1 << 30;
+        int tmp = Integer.MAX_VALUE;
+        tmp++;
+        assertEquals(Integer.MIN_VALUE, tmp);
+        assertEquals(expected, tmp >>> 1);
+    }
+
+    @Test
     void calculate() throws IOException {
         AddSumUp addSumUp = new AddSumUp();
 
