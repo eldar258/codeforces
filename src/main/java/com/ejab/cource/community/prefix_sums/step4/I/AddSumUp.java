@@ -64,7 +64,7 @@ public class AddSumUp {
 
         private int nextRand() {
             cur = cur * a + b;
-            return Integer.divideUnsigned(cur, 256);
+            return cur >>> 8;
         }
 
         public int[] nextFirstType() {
