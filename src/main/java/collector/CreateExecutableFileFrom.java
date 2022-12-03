@@ -37,8 +37,15 @@ public @interface CreateExecutableFileFrom {
 
         BUFFEREDREADER_THEN_LARRAY(clazz -> Collector.createAnswer(clazz,
                 "whenBufferedReaderThenLArray.txt")),
+
         BUFFEREDREADER_THEN_L(clazz -> Collector.createAnswer(clazz,
-                "whenBufferedReaderThenL.txt"));
+                "whenBufferedReaderThenL.txt")),
+
+        BUFFEREDREADER_THEN_TWODLARRAY(clazz -> Collector.createAnswer(clazz,
+                "whenBufferedReaderThenTwoDLArray.txt")),
+
+        BUFFEREDREADER_THEN_TWODINTARRAY(clazz -> Collector.createAnswer(clazz,
+                "whenBufferedReaderThenTwoDIntArray.txt"));
 
         final Consumer<Class<?>> consumer;
 
