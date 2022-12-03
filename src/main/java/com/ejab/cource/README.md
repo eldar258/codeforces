@@ -6,3 +6,4 @@
 ![image](https://user-images.githubusercontent.com/27091175/205461058-57c5ad22-7e78-4605-8371-ecb7c5778a16.png)
 ### а так же в 22 человека, кто решил последнюю задачу (K. Запросы композиции перестановок)
 ![image](https://user-images.githubusercontent.com/27091175/205461090-45fd43d1-4eca-4286-95d2-807e58d1a669.png)
+### Курс прошёл за 17 дней
