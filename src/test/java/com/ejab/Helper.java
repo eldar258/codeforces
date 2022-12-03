@@ -19,6 +19,8 @@ public class Helper {
     public static void printArrayFirst100(Object[] array) {
         Arrays.stream(array).limit(100).forEach(el -> {
             if (el instanceof Object[]) printArrayFirst100((Object[]) el);
+            else if (el instanceof int[]) printArrayFirst100((int[]) el);
+            else if (el instanceof long[]) printArrayFirst100((long[]) el);
             else System.out.printf("[%-2s],", el);
         });
         System.out.println();
